@@ -1,5 +1,5 @@
 # TypeScript / JavaScript with Jest for unit testing. 
-A simple algorithm and unit test for giving discounts on purchased books from a bookstore.
+A simple logic with unit tests for giving discounts on purchased books from a bookstore.
 
 #Application was written in TypeScript and JavaScript using Nodejs and Express!
 
