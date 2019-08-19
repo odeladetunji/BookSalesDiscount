@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Book Store</title>
+    <style>
+         body {
+           padding: 0px;
+           margin: 0px;
+         }
+         .content {
+         }
+         .page {
+           background-color: #20639B;
+           padding-top: 100px;
+           display: flex;
+           flex-wrap: nowrap;
+           width: 100%;
+           padding-bottom: 150px;
+         }
+
+         button {
+           width: 103%;
+           background-color: black;
+           color: white;
+           border: 1px solid black;
+           padding: 20px 0px;
+           font-size: 17px;
+         }
+
+         button:hover {
+           background-color: green;
+           bor: 1px solid green;
+         }
+
+         form {
+           background-color: transparent;
+           padding-left: 40px;
+           padding-right: 50px;
+           /* width: 30%; */
+           margin-left: 10%;
+           border: 1px solid white;
+           padding-top: 10px;
+           padding-bottom: 40px;
+           border-radius: 5px;
+         }
+
+         input {
+           width: 100%;
+           border-radius: 3px;
+           background-color: white;
+           font-size: 17px;
+           color: black;
+           margin-bottom: 10px;
+           margin-top: 5px;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           border: 1px solid #fafafa;
+           padding-left: 10px;
+           font-weight: bold;
+         }
+
+          #tag {
+           text-align: center;
+           color: white;
+           font-weight: bold;
+           font-size: 20px;
+           border-top: 1px solid white;
+           border-bottom: 1px solid white;
+           padding-top: 10px;
+           padding-bottom: 10px;
+         }
+
+         label {
+           color: white;
+         }
+
+         .page div {
+            width: 50%;
+         }
+
+         .page form {
+            width: 30%;
+         }
+
+         .result p {
+           text-align: center;
+           color: white;
+           font-weight: bold;
+           font-size: 60px;
+         }
+
+         #thePrice, #theDiscount {
+           padding-right: 20px;
+           color: white;
+         }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class='page'>
+          <form class="" id="form">
+               <p id="tag">Shoping Cart (Books)</p>
+               <label>Book One</label><br>
+               <input type="number" id='bookOne' max='5', min='0' placeholder="enter quantity"><br>
+               <label>Book Two</label><br>
+               <input type="number" id="bookTwo" max='5', min='0' placeholder="enter quantity"><br>
+               <label>Book Three</label><br>
+               <input type="number" id="bookThree" max='5', min='0' placeholder="enter quantity"><br>
+               <label>Book Four</label><br>
+               <input type="number" id="bookFour" max='5', min='0' placeholder="enter quantity"><br>
+               <label>Book Five</label><br>
+               <input type="number" id="bookFive" max='5', min='0' placeholder="enter quantity"><br>
+               <button type="submit">Check Price</button>
+          </form>
+
+          <div class="result">
+              <p id="price"> <span id="thePrice">Price</p>
+
+          </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function calCulateAmount(formData) {
+          var xmlHttpRequest = new XMLHttpRequest();
+          xmlHttpRequest.open('POST', '/calculatePrice', true);
+          xmlHttpRequest.onreadystatechange = function(){
+             if(this.status == 200){
+                    console.log(this.responseText);
+                    console.log('it entered')
+                    var param = this.responseText
+                    var data = JSON.parse(param);
+                    console.log(data);
+                    document.getElementById('price').innerHTML = data.price;
+             }
+          }
+         //xhttp.setRequestHeader('X-CSRF-TOKEN', theToken);
+         xmlHttpRequest.setRequestHeader("X-Requested-With", 'XMLHttpRequest');
+         xmlHttpRequest.setRequestHeader("processData", 'false');
+         xmlHttpRequest.setRequestHeader('cache', 'false');
+         xmlHttpRequest.setRequestHeader("Content-Type", 'application/json');
+         // xhttp.send(param);
+         xmlHttpRequest.send(formData);
+      }
+
+      var form = document.getElementById('form');
+      form.onsubmit = function(event){
+        event.preventDefault();
+        var bookOne = document.getElementById('bookOne').value;
+        var bookTwo = document.getElementById('bookTwo').value;
+        var bookThree = document.getElementById('bookThree').value;
+        var bookFour = document.getElementById('bookFour').value;
+        var bookFive = document.getElementById('bookFive').value;
+
+        var data = {
+          bookOne: parseInt(bookOne), bookTwo: parseInt(bookTwo),
+          bookThree: parseInt(bookThree), bookFour: parseInt(bookFour),
+          bookFive: parseInt(bookFive)
+        }
+
+        calCulateAmount(JSON.stringify(data));
+      }
+    </script>
+  </body>
+</html>
