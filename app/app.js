@@ -18,6 +18,6 @@ app.use(bodyParser.json()); // json parser
 // const app: express.Application = express();
 app.use("/", home_1.home);
 app.use("/calculatePrice", calculatePrice_1.calculatePrice);
-app.listen(9001, function () {
-    console.log("Example app listening on port 3000!");
+app.listen(9000, function () {
+    console.log("Example app listening on port 9000");
 });
