@@ -18,3 +18,4 @@ https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/app.test.js
 https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/functions.js
 
 #Logic
+https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/routes/calculatePrice.ts
