@@ -16,3 +16,5 @@ https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/app.test.js
 
 #Test Functions
 https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/functions.js
+
+#Logic
