@@ -11,6 +11,11 @@ A simple algorithm and unit test for giving discounts on purchased books from a 
 
        'npm run tsc'          compiles tsc to javascript
        'supervisor app.js'    this will start the express application
+
+#goto localhost:9000/ on the browser. 
+
+#Also check your terminal console After each button click. 
+
 #You might want to change the port on which express is running. 
 
 #Test Case
