@@ -4,7 +4,6 @@ A simple algorithm and unit test for giving discounts on purchased books from a 
 # Application was written in TypeScript and JavaScript using Nodejs and Express!
 
 #intallation
- Run 
        'npm install'          from the root directory where package.json is located'
  
 #Navigate to the ./app directory run
