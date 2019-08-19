@@ -13,3 +13,6 @@ A simple algorithm and unit test for giving discounts on purchased books from a 
 
 #Test Case
 https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/app.test.js
+
+#Test Functions
+https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/functions.js
