@@ -18,7 +18,9 @@ A simple algorithm and unit test for giving discounts on purchased books from a 
 
 #You might want to change the port on which express is running. 
 
-#Test Case
+#Unit Test was written using JEST
+
+#Test Cases
 https://github.com/odeladetunji/BookSalesDiscount/blob/master/app/app.test.js
 
 #Test Functions
